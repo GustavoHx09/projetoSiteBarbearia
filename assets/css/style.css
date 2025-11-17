@@ -1,0 +1,630 @@
+/* ================================
+   Estilo Base do Site Barbearia
+   Tema: Moderno
+   ================================ */
+
+/* Importando fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+/* Reset básico — remove espaçamentos padrões e padroniza estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Configurações globais */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+
+/* Limita o conteúdo central do site */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+
+/* Cabeçalho */
+header {
+  background-color: #111;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 5px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+
+/* Navegação */
+nav a {
+  color: #c5a100;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e0b700;
+}
+
+
+
+/* ================================
+   Estrutura e Seções
+   ================================ */
+
+main.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.login {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 35px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  max-width: 380px;
+  width: 100%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+section.login h2 {
+  margin-bottom: 25px;
+  color: #222;
+  font-weight: 700;
+}
+
+/* Inputs */
+section.login input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1px solid #cdaa6f; /* Dourado padrão do site */
+  font-size: 15px;
+  outline: none;
+}
+
+section.login input:focus {
+  border-color: #b89045;
+}
+
+/* Botão */
+.btn-login {
+  width: 100%;
+  background-color: #cdaa6f;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-login:hover {
+  background-color: #b89045;
+  transform: translateY(-2px);
+}
+
+
+section {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 20px;
+  border-left: 5px solid #c5a100;
+  padding-left: 10px;
+}
+
+section p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+
+/* Botões */
+.btn {
+  background: linear-gradient(135deg, #c5a100, #e0b700);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(197, 161, 0, 0.3);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #e0b700, #f1d04f);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(197, 161, 0, 0.5);
+}
+
+
+/* Lista de serviços */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: #f9f9f9;
+  border-left: 4px solid #c5a100;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+ul li:hover {
+  background: #fff4cc;
+}
+
+
+/* ================================
+   Cards de Planos
+   ================================ */
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 25px;
+  text-align: center;
+  width: 280px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+  border-top: 4px solid #c5a100;
+
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(197, 161, 0, 0.3);
+}
+
+.card h3 {
+  color: #111;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+.card .price {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #c5a100;
+  margin-bottom: 20px;
+}
+
+.card button {
+  background: linear-gradient(135deg, #c5a100, #e0b700);
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(197, 161, 0, 0.3);
+}
+
+.card button:hover {
+  background: linear-gradient(135deg, #e0b700, #f1d04f);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(197, 161, 0, 0.5);
+}
+
+/* Card em destaque */
+.card.destaque {
+  background: linear-gradient(160deg, #fff9e5, #fff3c4);
+  border-top: 6px solid #d4b000;
+  box-shadow: 0 8px 25px rgba(197, 161, 0, 0.4);
+  transform: scale(1.05);
+}
+
+
+/* ============================= 
+    RODAPÉ - FOOTER         
+============================= */
+footer {
+  background-color: #111;
+  /* fundo escuro */
+  color: #ddd;
+  padding: 40px 0 20px 0;
+  margin-top: 40px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 30px;
+}
+
+/* Colunas do footer */
+.footer-container>div {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+/* Títulos das seções */
+footer h3,
+footer h4 {
+  color: #d4af37;
+  /* dourado metálico */
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #d4af37;
+}
+
+/* Contato e redes sociais */
+.footer-contato p,
+.footer-redes a {
+  color: #bbb;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-redes a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.footer-redes a:hover {
+  color: #d4af37;
+}
+
+/* Direitos autorais */
+.footer-direitos {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Efeito de hover suave para o nome da barbearia */
+.footer-logo h3:hover {
+  color: #f1c94d;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  transition: all 0.4s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+
+
+/* ================================ 
+    PÁGINA DE CONTATO           
+================================ */
+
+#contato {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Coluna esquerda (mapa) */
+#contato .mapa {
+  flex: 1;
+  min-width: 350px;
+}
+
+#contato .mapa h2 {
+  border-left: 5px solid #c5a100;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+#contato .mapa iframe {
+  width: 100%;
+  height: 280px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(197, 161, 0, 0.3);
+}
+
+#contato .mapa .btn {
+  margin-top: 15px;
+}
+
+/* Coluna direita (informações e formulário) */
+#contato .info-contato {
+  flex: 1;
+  min-width: 350px;
+}
+
+#contato .info-contato h2 {
+  border-left: 5px solid #c5a100;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+#contato .info-contato ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+#contato .info-contato li {
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Formulário */
+#contato form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contato form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+#contato form input,
+#contato form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+#contato form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Botão */
+#contato form .btn {
+  align-self: flex-start;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #contato {
+    flex-direction: column;
+  }
+
+  #contato .mapa,
+  #contato .info-contato {
+    width: 100%;
+  }
+}
+
+
+
+/* ===========================
+   PAGINA DE AGENDAMENTO
+=========================== */
+
+/* Container principal */
+.agendamento-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Título / texto inicial */
+.agendamento-container h1,
+.agendamento-container h5 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Formulário */
+.agendamento-container form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs e select */
+.agendamento-container input,
+.agendamento-container select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #cdaa6f;
+  /* dourado suave */
+  background-color: #000000;
+  /* fundo escuro */
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+}
+
+/* Labels */
+.agendamento-container label {
+  font-weight: 600;
+  margin-bottom: 3px;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Div com 2 colunas (Nome/Telefone, Data/Horário) */
+.campo-duplo {
+  display: grid;
+  margin-top: 5px;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* Botão */
+.agendamento-container button.btn {
+  width: 50%;
+  margin: 20px auto 0 auto;
+  display: block;
+  padding: 12px;
+  background-color: #cdaa6f;
+  /* Dourado */
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.agendamento-container button.btn:hover {
+  background-color: #b08b50;
+}
+
+/* Responsivo (mobile) */
+@media (max-width: 600px) {
+  .campo-duplo {
+    grid-template-columns: 1fr;
+    /* vira 1 coluna no celular */
+  }
+
+  .agendamento-container button.btn {
+    width: 100%;
+  }
+}
+
+
+/* ===========================
+  PÁGINA DE GALERIA
+=========================== */
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px; /* altura base para o grid */
+  grid-auto-flow: dense; /* faz as imagens se encaixarem como um mosaico */
+  gap: 15px;
+  padding: 20px;
+}
+
+.galeria-grid figure {
+  margin: 0;
+  overflow: hidden; /* evita que a imagem ultrapasse os limites */
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-grid figure:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste de imagem */
+.galeria-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta a imagem proporcionalmente */
+  display: block;
+  border: 6px solid #b08b50;
+}
+
+/* Para dar variação de tamanhos (efeito artístico) */
+.galeria-grid figure:nth-child(3n) {
+  grid-row: span 2; /* ocupa duas linhas */
+}
+
+.galeria-grid figure:nth-child(5n) {
+  grid-column: span 2; /* ocupa duas colunas */
+}

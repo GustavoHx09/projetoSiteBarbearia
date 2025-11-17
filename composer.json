@@ -1,0 +1,15 @@
+{
+    "name": "gustavo.silva/projeto-barbearia",
+    "autoload": {
+        "psr-4": {
+            "GustavoSilva\\ProjetoBarbearia\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gustavo Henrique",
+            "email": "gustavo.henrique091104@gmail.com"
+        }
+    ],
+    "require": {}
+}
